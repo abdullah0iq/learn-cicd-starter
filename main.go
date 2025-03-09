@@ -47,8 +47,10 @@ func main() {
 		db, err := sql.Open("libsql", dbURL)
 		if err != nil {
 			log.Fatal(err)
+
 		}
 		dbQueries := database.New(db)
+
 		apiCfg.DB = dbQueries
 		log.Println("Connected to database!")
 	}
@@ -89,8 +91,9 @@ func main() {
 
 	router.Mount("/v1", v1Router)
 	srv := &http.Server{
-		Addr:    ":" + port,
-		Handler: router,
+		Addr:              ":" + port,
+		Handler:           router,
+		ReadHeaderTimeout: 5,
 	}
 
 	log.Printf("Serving on port: %s\n", port)
