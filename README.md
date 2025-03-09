@@ -1,4 +1,4 @@
-![](https://github.com/abdullah0iq/learn-ci-cd/actions/workflows/cy.yml/badge.svg)
+![CI/CD Build Status](https://github.com/abdullah0iq/learn-ci-cd/actions/workflows/ci.yml/badge.svg)
 
 # learn-cicd-starter (Notely)
 
