@@ -47,8 +47,10 @@ func main() {
 		db, err := sql.Open("libsql", dbURL)
 		if err != nil {
 			log.Fatal(err)
+
 		}
 		dbQueries := database.New(db)
+
 		apiCfg.DB = dbQueries
 		log.Println("Connected to database!")
 	}
